@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   RepositoryDataType,
   fetchRepositories,
@@ -15,6 +15,11 @@ export const DropdownButton: React.FC<DropdownButtonProps> = ({ username }) => {
   const [loaded, setLoaded] = useState(false);
   const [repositories, setRepositories] = useState<RepositoryDataType[]>([]);
 
+  useEffect(() => {
+    setLoaded(false);
+    setOpen(false);
+  }, [username]);
+
   const getRepositories = async () => {
     const repos = await fetchRepositories(username);
 
@@ -26,13 +31,14 @@ export const DropdownButton: React.FC<DropdownButtonProps> = ({ username }) => {
   };
 
   const handleClick = () => {
-    console.log({ loaded });
     if (!loaded) {
       getRepositories().then(() => {
         setLoaded(true);
+        toggleDropdown();
       });
+    } else {
+      toggleDropdown();
     }
-    toggleDropdown();
   };
 
   const toggleDropdown = () => {

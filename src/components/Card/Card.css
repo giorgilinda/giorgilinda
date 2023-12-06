@@ -3,7 +3,7 @@
   margin-left: 20px;
   padding: 10px;
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 1fr 50px;
   grid-template-rows: 25px 1fr;
   align-items: center;
   justify-items: start;
@@ -15,6 +15,13 @@
 
 .cardName {
   font-weight: bold;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -ms-text-overflow: ellipsis;
 }
 
 .cardStars {

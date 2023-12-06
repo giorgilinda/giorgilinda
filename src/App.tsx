@@ -1,11 +1,6 @@
 import "./App.css";
 import { Frame } from "./components/Frame/Frame";
 
-// TODO:
-// repo title croped on 2 lines
-// in some cases the frame overlap... find case and solve it
-// if search term is changed, close all cards
-
 function App() {
   return (
     <div className="App">
