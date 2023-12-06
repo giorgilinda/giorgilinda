@@ -22,7 +22,7 @@ export const fetchUsers = async (
     } else {
       throw new Error("Sorry. Something went wrong...");
     }
-  } catch (error) {
-    console.log({ error });
+  } catch (e) {
+    return undefined;
   }
 };
