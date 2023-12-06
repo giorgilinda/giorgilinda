@@ -33,11 +33,14 @@ export const Frame: React.FC<FrameProps> = ({ title }) => {
   };
 
   return (
-    <div className="frame">
-      <h3 className="title">{title}</h3>
+    <div className="frame" data-testid="frame">
+      <h3 className="title" data-testid="frameTitle">
+        {title}
+      </h3>
       <form onSubmit={handleSubmit}>
         <fieldset className="fieldset">
           <input
+            data-testid="frameUsername"
             id="username"
             className="usernameInput"
             type="text"
@@ -45,13 +48,19 @@ export const Frame: React.FC<FrameProps> = ({ title }) => {
             placeholder="Enter username"
             onChange={() => setLoaded(false)}
           />
-          <button className="searchButton" type="submit">
+          <button
+            className="searchButton"
+            type="submit"
+            data-testid="frameButton"
+          >
             Search
           </button>
 
           {users && users.length > 0 && (
             <>
-              <span className="resultText">Showing users for "{username}"</span>
+              <span className="resultText" data-testid="frameResultText">
+                Showing users for "{username}"
+              </span>
               {users.map((user, index) => (
                 <DropdownButton key={index} username={user.login} />
               ))}

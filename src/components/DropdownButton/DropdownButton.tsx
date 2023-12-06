@@ -47,26 +47,40 @@ export const DropdownButton: React.FC<DropdownButtonProps> = ({ username }) => {
 
   return (
     <>
-      <button className="button" onClick={handleClick}>
-        <span className="username">{username}</span>
+      <button className="button" onClick={handleClick} data-testid="button">
+        <span className="username" data-testid="buttonUsername">
+          {username}
+        </span>
         {!open && (
-          <span className="material-symbols-outlined">keyboard_arrow_down</span>
+          <span
+            className="material-symbols-outlined"
+            data-testid="buttonArrowDown"
+          >
+            keyboard_arrow_down
+          </span>
         )}
         {open && (
-          <span className="material-symbols-outlined">keyboard_arrow_up</span>
+          <span
+            className="material-symbols-outlined"
+            data-testid="buttonArrowUp"
+          >
+            keyboard_arrow_up
+          </span>
         )}
       </button>
-      {repositories &&
-        repositories.length > 0 &&
-        open &&
-        repositories.map((repo, index) => (
-          <Card
-            key={index}
-            name={repo.name}
-            description={repo.description}
-            stars={repo.stargazers_count}
-          />
-        ))}
+
+      {repositories && repositories.length > 0 && open && (
+        <div data-testid="repositories">
+          {repositories.map((repo, index) => (
+            <Card
+              key={index}
+              name={repo.name}
+              description={repo.description}
+              stars={repo.stargazers_count}
+            />
+          ))}
+        </div>
+      )}
       {repositories && repositories.length === 0 && open && loaded && (
         <p>No repositories found.</p>
       )}
