@@ -1,0 +1,40 @@
+* {
+  border-radius: 2px;
+}
+
+.frame {
+  margin: 0;
+}
+
+.title {
+  font-size: 1em;
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.fieldset {
+  display: grid;
+  row-gap: 15px;
+  background-color: #fff;
+  border: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.usernameInput {
+  border: 2px solid #d2d2d2;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+.searchButton {
+  border: none;
+  background-color: #227ddb;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 10px;
+}

@@ -1,0 +1,33 @@
+.container {
+  background-color: #bababa;
+  margin-left: 20px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-template-rows: 25px 1fr;
+  align-items: center;
+  justify-items: start;
+}
+
+.container span {
+  color: #171717;
+}
+
+.cardName {
+  font-weight: bold;
+}
+
+.cardStars {
+  display: flex;
+  justify-self: end;
+  align-items: stretch;
+
+  .material-symbols-outlined {
+    font-size: 16px;
+    margin-left: 3px;
+  }
+}
+
+.cardDescription {
+  grid-column: 1/3;
+}

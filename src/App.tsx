@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Frame } from "./components/Frame/Frame";
+
+// TODO:
+// repo title croped on 2 lines
+// in some cases the frame overlap... find case and solve it
+// if search term is changed, close all cards
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Frame title="Frame 1" />
+      <Frame title="Frame 2" />
+      <Frame title="Frame 3" />
+      <Frame title="Frame 4" />
     </div>
   );
 }

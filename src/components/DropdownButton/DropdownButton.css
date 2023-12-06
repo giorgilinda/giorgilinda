@@ -1,0 +1,18 @@
+.button {
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  color: #303030;
+  font-weight: bold;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.username {
+  align-self: center;
+}
