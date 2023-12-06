@@ -18,7 +18,7 @@ export const fetchUsers = async (
     );
     if (response.ok) {
       const { items }: UserDataResponseType = await response.json();
-      return items;
+      return items.slice(0, 5);
     } else {
       throw new Error("Sorry. Something went wrong...");
     }
